@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions-pratice</title>
+</head>
+<body>
+    <script>
+        // ---------------------------- Example 1----------------------------------------------------------
+    
+        function greet(name){
+
+        if(name===undefined){
+            name="Stranger";
+        }
+         console.log(`Hello! ${name}`);
+    }
+    greet();
+    greet('Rishitha');
+
+    // ---------------------------- Example 2----------------------------------------------------------
+
+    function convertToFahrenheit(Celsius){
+        let fahrenheit=(Celsius*9/5)+32;
+        console.log(fahrenheit);
+    }
+    convertToFahrenheit(25);
+    function convertToCelsius(fahrenheit){
+        let Celsius=(fahrenheit-32)*5/9;
+        console.log(Celsius);
+    }
+    convertToCelsius(86);
+    function convertTemparature(degree,unit){
+        let convertTemparature;
+        if(unit==='C'){
+            convertTemperature=(degree*9/5)+32;
+            console.log(convertTemperature);
+        }
+        else if(unit==='F'){
+            convertTemparature=(degree-32)*5/9;
+            console.log(convertTemparature);
+        }
+    }
+    convertTemparature(25,'C');
+    convertTemparature(86,'F');
+
+    // ---------------------------- Example 3----------------------------------------------------------
+    
+    function convertLength(length,from,to){
+        let convertedLength;
+        if(from=='miles' && to=='km'){
+            convertedLength=length*1.6;
+            console.log(convertedLength);
+        }
+        else if(from=='km' && to=='miles'){
+            convertedLength=length/1.6;
+            console.log(convertedLength);
+        }
+    }
+    convertLength(50,'miles','km');
+    convertLength(32,'km','miles');
+    convertLength(50,'km','km');
+
+    // ---------------------------- Example 4----------------------------------------------------------
+
+    function convertLengths()
+
+
+    </script>
+</body>
+</html>
