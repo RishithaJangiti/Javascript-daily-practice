@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object-pratice</title>
+</head>
+<body>
+    <button onclick="
+        playGame('heads')
+        ">heads</button>
+    <button onclick="
+        playGame('tails')
+        ">tails</button>
+    <script>
+        // example 1----------------------------------------
+
+    const product={
+        name:'basketball',
+        price:2095
+    };
+    console.log(product);
+    product.price+=500;
+    console.log(product);
+    product['delivery-time']='3days';
+    console.log(product);
+    const product1={
+        name:'football',
+        price:1200
+    };
+    const product2={
+        name:'ball',
+        price:1300
+    };
+    function comparePrice(product1,product2){
+        if(product1.price>product2.price){
+            return product2.name;
+        }
+        else{
+             return product1.name;
+        }
+    }
+    console.log(comparePrice(product1,product2));
+    function issameproduct(product1,product2){
+        if((product1.name===product2.name)&&(product1.price===product2.price)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    console.log(issameproduct(product1,product2));
+
+    let v='Good Morning'
+    console.log(v.toLowerCase());
+    console.log();
+    let a='test';
+    console.log(a.repeat(2));
+
+// example2-----------------------------------------
+ let score={
+    wins:0,
+    loss:0
+ };
+ localstorage.setItem('score',JSON.stringify(score));
+    let storedscore=localstorage.getItem('score');
+    if(storedscore){
+        score=JSON.parse(storedscore);
+    }
+   
+    
+    function playGame(guess){
+
+        let computerchoice='';
+        let result='';
+        let randomNumber=Math.random();
+        console.log(randomNumber);
+        if(randomNumber<0.5){
+            computerchoice='heads';
+        }
+        else{
+            computerchoice='tails';
+        }
+        if(guess===computerchoice){
+            score.wins+=1;
+            result='you win';
+        }
+        else{
+               score.loss+=1;  
+            result='you lose';      }
+    
+    alert(`computer picked ${computerchoice}. you picked:${guess}.${result}. wins: ${score.wins}, loss: ${score.loss}`)}
+   
+    
+
+        
+    
+
+    </script>
+</body>
+</html>
