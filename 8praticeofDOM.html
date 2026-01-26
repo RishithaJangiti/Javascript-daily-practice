@@ -1,0 +1,45 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Practice</title>
+</head>
+<body>
+
+  <p>
+    <button class="js-9a">9a</button>
+    <button class="js-9b">9b</button>
+  </p>
+
+  <p>
+    <button onclick="Head()" class="js-head">heads</button>
+    <button onclick="Tail()" class="js-tail">tails</button>
+  </p>
+
+  <input placeholder="Name" class="js-input">
+  <button onclick="display()">Submit</button>
+
+  <!-- OUTPUT AREA -->
+  <p class="js-output"></p>
+
+  <script>
+    console.log(document.querySelector('.js-9a'));
+    document.querySelector('.js-9b').innerHTML = '9b done!';
+
+    function Head() {
+      alert('you choose head');
+    }
+
+    function Tail() {
+      alert('you choose tail');
+    }
+
+    function display() {
+      let name = document.querySelector('.js-input').value;
+      document.querySelector('.js-output').innerHTML = `YOUR NAME IS ${name}`;
+    }
+  </script>
+
+</body>
+</html>
