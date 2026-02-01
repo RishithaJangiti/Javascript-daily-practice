@@ -1,11 +1,26 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM Practice</title>
 </head>
-<body>
+<body><p class="js-cart-quantity">
+  <button onclick="
+    cart1();">Show Quality</button>
+    <button onclick="
+    cartQuantity+=1; 
+    cart();
+    " >Add to Cart</button>
+    <button onclick="cart2()
+    cartQuantity+=2;" >+2</button>
+    <button onclick="cart3()
+    cartQuantity+=3;" >+3</button>
+    <button onclick="cart4()
+    cartQuantity=0; 
+    
+    " >Reset cart</button>
+    </p>
 
   <p>
     <button class="js-9a">9a</button>
@@ -17,7 +32,7 @@
     <button onclick="Tail()" class="js-tail">tails</button>
   </p>
 
-  <input placeholder="Name" class="js-input">
+  <input placeholder="Name" class="js-input" onkeydown="handleEvent(event)">
   <button onclick="display()">Submit</button>
 
   <!-- OUTPUT AREA -->
@@ -34,12 +49,36 @@
     function Tail() {
       alert('you choose tail');
     }
+    function handleEvent(event){
+      if(event.key=='Enter'){
+        display();
+      }
+    }
 
     function display() {
       let name = document.querySelector('.js-input').value;
       document.querySelector('.js-output').innerHTML = `YOUR NAME IS ${name}`;
     }
-  </script>
+    // example of cart Quantity project update
 
-</body>
-</html>
+     let cartQuantity=0;
+    function cart1(){
+    cartQuantity+=1;
+    document.querySelector('.js-cart-quantity').innerHTML=`cart quantity: ${cartQuantity}`;}
+    function cart2(){
+           cartQuantity+=2;
+    document.querySelector('.js-cart-quantity').innerHTML=`cart quantity: ${cartQuantity}`;}
+    
+    function cart3(){
+
+     cartQuantity+=3;
+    document.querySelector('.js-cart-quantity').innerHTML=`cart quantity: ${cartQuantity}`;}
+    function cart4(){
+
+       cartQuantity+=4;
+    document.querySelector('.js-cart-quantity').innerHTML=`cart quantity: ${cartQuantity}`;}
+    
+
+    </script>
+    </body>
+    </html>
